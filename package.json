@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node skeleton/test.js | tap-spec "
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/FACN7/aom-tdd-week3/issues"
   },
-  "homepage": "https://github.com/FACN7/aom-tdd-week3#readme"
+  "homepage": "https://github.com/FACN7/aom-tdd-week3#readme",
+  "devDependencies": {
+    "tap-spec": "^5.0.0",
+    "tape": "^4.11.0"
+  }
 }
