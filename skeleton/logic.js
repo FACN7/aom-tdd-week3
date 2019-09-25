@@ -49,12 +49,27 @@ var todoFunctions = {
     // in the new todo array, all elements will remain unchanged except the one with id: idToMark
     // this element will have its done value toggled
     // hint: array.map
+    const newArr = this.cloneArrayOfObjects(todos);
+    return newArr.map(function(e) {
+      if (e.id === idToMark) {
+        if (e.done == true) e.done = false;
+        else e.done = true;
+      }
+      return e;
+    });
   },
-  sortTodos: function(todos, sortFunction) {
+  //sortFunction
+  sortTodos: function(todos) {
     // stretch goal! Do this last
     // should leave the input arguement todos unchanged (you can use cloneArrayOfObjects)
     // sortFunction will have same signature as the sort function in array.sort
     // hint: array.slice, array.sort
+    var clone = this.cloneArrayOfObjects(todos);
+    return clone.sort((a, b) => {
+      const nameA = a.description.toLowerCase();
+      const nameB = b.description.toLowerCase();
+      return nameA > nameB ? 1 : -1;
+    });
   }
 };
 
