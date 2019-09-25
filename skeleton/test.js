@@ -81,3 +81,41 @@ test("Delete todo", function(t) {
 
   t.end();
 });
+
+// test("Mark todo", function(t) {
+//   const actual = logic.markTodo(
+//     [
+//       { id: 1, description: "a", done: false },
+//       { id: 2, description: "b", done: false }
+//     ],
+//     2
+//   );
+
+//   const expected = logic.markTodo(
+//     [
+//       { id: 1, description: "a", done: false },
+//       { id: 2, description: "b", done: true }
+//     ],
+//     2
+//   );
+
+//   t.deepEqual(actual, expected, "abc");
+
+//   t.end();
+// });
+
+test("Sort Method", function(t) {
+  const actual = logic.sortTodos([
+    { id: 1, description: "a", done: false },
+    { id: 2, description: "b", done: false }
+  ]);
+
+  const expected = logic.markTodo([
+    { id: 2, description: "b", done: false },
+    { id: 1, description: "a", done: false }
+  ]);
+
+  t.deepEqual(actual, expected, "abc");
+
+  t.end();
+});

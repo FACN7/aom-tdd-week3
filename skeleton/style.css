@@ -1,0 +1,26 @@
+i {
+  cursor: pointer;
+}
+
+.iconColor {
+  color: red;
+}
+
+.todoColumn {
+  flex-grow: 1;
+  max-width: 30px;
+}
+
+.toColumnDescription {
+  flex-grow: 1;
+  max-width: 200px;
+  word-break: break-word;
+}
+html {
+  /* background-color: 
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover; */
+  /* background-color: #464646; */
+}
