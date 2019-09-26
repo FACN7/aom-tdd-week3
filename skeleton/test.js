@@ -1,6 +1,7 @@
 var test = require("tape");
 var logic = require("./logic");
 
+
 test("Add todo", function (t) {
   const actual = logic.addTodo([], {
     description: "make smoothie out of things that should really be cooked"
@@ -103,9 +104,8 @@ test("Mark todo", function (t) {
 });
 
 test("Sort Method", function (t) {
-  const actual = logic.sortTodos([
+  const actual = logic.sortTodos([{
 
-    {
       id: 2,
       description: "b",
       done: false
@@ -117,7 +117,7 @@ test("Sort Method", function (t) {
     }
   ]);
 
-  const expected = ([{
+  const expected = logic.markTodo([{
       id: 1,
       description: "a",
       done: false
@@ -127,9 +127,10 @@ test("Sort Method", function (t) {
       description: "b",
       done: false
     }
+
   ]);
 
-  t.deepEqual(actual, expected, "abc");
+  t.deepEqual(actual, expected);
 
   t.end();
 });
