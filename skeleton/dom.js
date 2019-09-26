@@ -72,11 +72,16 @@
     });
     if (todo.done) {
       markButtonNode.checked = true;
+      spanDescription.className = "removeDescription";
     } else {
       markButtonNode.checked = false;
     }
 
+    console.log("outside event listener");
+
     markButtonNode.addEventListener("click", function(event) {
+      console.log("inside event listener");
+
       if (markButtonNode.checked)
         spanDescription.className = "removeDescription";
       else spanDescription.className = "toColumnDescription";
