@@ -65,10 +65,10 @@
     }
 
     markButtonNode.addEventListener("click", function(event) {
-      //let newState = [...state];
+      if (markButtonNode.checked)
+        spanDescription.className = "removeDescription";
+      else spanDescription.className = "toColumnDescription";
       state = todoFunctions.markTodo(state, todo.id);
-      //= newState;
-      //console.log(state);
     });
 
     // add classes for css

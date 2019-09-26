@@ -16,6 +16,12 @@ i {
   max-width: 200px;
   word-break: break-word;
 }
+.removeDescription {
+  flex-grow: 1;
+  max-width: 200px;
+  word-break: break-word;
+  text-decoration: line-through;
+}
 html {
   /* background-color: 
   background-position: center center;
