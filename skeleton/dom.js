@@ -10,13 +10,25 @@
 
   // This function takes a todo, it returns the DOM node representing that todo
   var createTodoNode = function(todo) {
+    /* retrive the current date*/
+    var currentdate = new Date();
+    var datetime =
+      +currentdate.getDate() +
+      "/" +
+      (currentdate.getMonth() + 1) +
+      "/" +
+      currentdate.getFullYear();
+
+    /* end*/
+
     var todoNode = document.createElement("li");
     todoNode.className = "list-group-item d-flex justify-content-between";
     var spanId = document.createElement("span");
-    spanId.innerHTML = todo.id;
+    spanId.innerHTML = datetime;
     spanId.className = "todoColumn";
 
     todoNode.appendChild(spanId);
+    console.log(spanId);
 
     // you will need to use addEventListener
 
@@ -88,7 +100,9 @@
       event.target[0].value = "";
 
       // hint: todoFunctions.addTodo
-      var newState = todoFunctions.addTodo(state, { description }); // ?? change this!
+      var newState = todoFunctions.addTodo(state, {
+        description
+      });
       if (description.length > 0) {
         newState = todoFunctions.sortTodos(newState);
         update(newState);
